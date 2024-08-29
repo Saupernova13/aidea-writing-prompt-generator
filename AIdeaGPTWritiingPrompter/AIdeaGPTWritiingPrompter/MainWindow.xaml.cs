@@ -1,4 +1,6 @@
 ﻿using OpenAI_API;
+using OpenAI_API.Audio;
+using OpenAI_API.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -7,6 +9,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Animation;
+using static OpenAI_API.Audio.TextToSpeechRequest;
 
 namespace AIdeaGPTWritiingPrompter
 {
@@ -16,6 +20,9 @@ namespace AIdeaGPTWritiingPrompter
         private List<string> tagSuggestionList;
         private ObservableCollection<string> addedGenres = new ObservableCollection<string>();
         private ObservableCollection<string> addedTags = new ObservableCollection<string>();
+
+        private static string apiKey = "KEY_GOES_HERE";
+        private OpenAIAPI api = new OpenAIAPI(apiKey);
 
         private string genresFilePath = "genres.csv";
         private string tagsFilePath = "tags.csv";
@@ -190,16 +197,27 @@ The following fiction tags must be considered for the story: {string.Join(", ", 
 
 The prompt should be engaging, creative, and thought-provoking. Provide a brief synopsis of the story idea, including key plot points, character motivations, and potential conflicts. Ensure that all specified elements are incorporated into the prompt in a cohesive and engaging manner.";
 
-            string generatedPrompt = await GetGptPrompt(prompt);
+            Storyboard loadingAnimation = (Storyboard)FindResource("LoadingAnimation");
+            loadingAnimation.Begin(GeneratePromptButton, true);
 
-            outputDisplay.Text = generatedPrompt;
+            try
+            {
+                GeneratePromptButton.IsEnabled = false;
+
+                string generatedPrompt = await GetGptPrompt(prompt);
+
+                outputDisplay.Text = generatedPrompt;
+                ReadPromptButton.IsEnabled = true;
+            }
+            finally
+            {
+                loadingAnimation.Stop(GeneratePromptButton);
+                GeneratePromptButton.IsEnabled = true;
+            }
         }
 
         private async Task<string> GetGptPrompt(string prompt)
         {
-            var apiKey = "KEY_GOES_HERE";
-            var api = new OpenAIAPI(apiKey);
-
             try
             {
                 var chat = api.Chat.CreateConversation();
@@ -250,6 +268,51 @@ The prompt should be engaging, creative, and thought-provoking. Provide a brief 
             if (e.Key == System.Windows.Input.Key.Enter)
             {
                 AddCustomItem(tagInput, addedTags, tagSuggestionList, tagsFilePath);
+            }
+        }
+
+        private async void ReadPrompt(object sender, RoutedEventArgs e)
+        {
+            string promptText = outputDisplay.Text;
+            if (string.IsNullOrWhiteSpace(promptText))
+            {
+                MessageBox.Show("No prompt to read.");
+                return;
+            }
+
+            Storyboard loadingAnimation = (Storyboard)FindResource("LoadingAnimation");
+            loadingAnimation.Begin(ReadPromptButton, true);
+
+            try
+            {
+                ReadPromptButton.IsEnabled = false;
+
+                var request = new TextToSpeechRequest()
+                {
+                    Input = promptText,
+                    Model = Model.TTS_HD,
+                    Voice = Voices.Onyx,
+                    ResponseFormat = ResponseFormats.MP3,
+                    Speed = 1.0
+                };
+
+                using (var result = await api.TextToSpeech.GetSpeechAsStreamAsync(request))
+                using (var fileStream = new FileStream("prompt_audio.mp3", FileMode.Create, FileAccess.Write))
+                {
+                    await result.CopyToAsync(fileStream);
+                }
+
+                audioPlayer.Source = new Uri(Path.GetFullPath("prompt_audio.mp3"), UriKind.Absolute);
+                audioPlayer.Play();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error generating audio: {ex.Message}");
+            }
+            finally
+            {
+                loadingAnimation.Stop(ReadPromptButton);
+                ReadPromptButton.IsEnabled = true;
             }
         }
     }

@@ -1,7 +1,7 @@
 ﻿<Window x:Class="AIdeaGPTWritiingPrompter.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Enhanced Writing Prompt Generator"
+        Title="Ai-dea : Writing Prompt Generator"
         Height="800"
         Width="1200"
         Background="#F0F0F0"
@@ -9,6 +9,13 @@
         ResizeMode="CanResize"
         WindowStyle="SingleBorderWindow">
     <Window.Resources>
+        <Storyboard x:Key="LoadingAnimation">
+            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(RotateTransform.Angle)"
+                             From="0"
+                             To="360"
+                             Duration="0:0:1"
+                             RepeatBehavior="Forever" />
+        </Storyboard>
         <Style x:Key="ModernTextBox"
                TargetType="TextBox">
             <Setter Property="Padding"
@@ -276,7 +283,7 @@
                                  Style="{StaticResource ModernRadioButton}" />
                 </StackPanel>
 
-                <TextBlock Text="Time Period"
+                <TextBlock Text="Time Period (Chronological Setting in Time)"
                            FontWeight="Bold"
                            Margin="0,0,0,5" />
                 <ComboBox x:Name="timePeriodSelector"
@@ -291,34 +298,53 @@
                     <ComboBoxItem Content="Far Future" />
                 </ComboBox>
 
-                <TextBlock Text="Setting"
+                <TextBlock Text="Story Setting (Physical Setting, Like A Location or Environment)"
                            FontWeight="Bold"
                            Margin="0,0,0,5" />
                 <TextBox x:Name="settingInput"
                          Style="{StaticResource ModernTextBox}"
                          Margin="0,0,0,20" />
 
-                <TextBlock Text="Main Character Traits"
+                <TextBlock Text="Main Character Traits (Habits, Quirks, Mannerisms)"
                            FontWeight="Bold"
                            Margin="0,0,0,5" />
                 <TextBox x:Name="characterTraitsInput"
                          Style="{StaticResource ModernTextBox}"
-                         Margin="0,0,0,20" />
+                         Margin="0,0,0,20"
+                         />
 
-                <Button Content="Generate Prompt"
-                        Style="{StaticResource ModernButton}"
-                        Click="GeneratePrompt"
-                        Margin="0,0,0,20" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Generate Prompt"
+                            x:Name="GeneratePromptButton"
+                            Style="{StaticResource ModernButton}"
+                            Click="GeneratePrompt"
+                            Margin="0,10,5,10" 
+                            Grid.Column="0"/>
+                    <Button x:Name="ReadPromptButton"
+                            Content="Read Prompt"
+                            Style="{StaticResource ModernButton}"
+                            Click="ReadPrompt"
+                            IsEnabled="False"
+                            Margin="5,10,0,10"
+                            Grid.Column="1"/>
+                </Grid>
 
+                <MediaElement Name="audioPlayer"
+                              LoadedBehavior="Manual"
+                              UnloadedBehavior="Stop" />
                 <TextBlock Text="Generated Prompt"
                            FontWeight="Bold"
                            Margin="0,0,0,5" />
                 <TextBox x:Name="outputDisplay"
                          Style="{StaticResource ModernTextBox}"
-                         Height="250"
+                         Height="265"
                          TextWrapping="Wrap"
                          VerticalScrollBarVisibility="Auto"
-                         IsReadOnly="True" />
+                         IsReadOnly="True"/>
             </StackPanel>
         </Grid>
     </Border>
