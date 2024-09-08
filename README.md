@@ -13,8 +13,8 @@ Ai-dea is an AI-powered writing assistant designed to help authors generate writ
 
 ## Demos:
 
-[Demo of Working Application](https://github.com/Saupernova13/lightlauncher/blob/main/docs/SAURAAV_AI-DEA_DEMO_VIDEO.mp4)
-![](https://github.com/Saupernova13/lightlauncher/blob/main/docs/SAURAAV_AI-DEA_DEMO_GIF.gif)
+[Demo of Working Application](https://github.com/Saupernova13/GPTWritingPrompter/blob/main/docs/SAURAAV_AI-DEA_DEMO_VIDEO.mp4)
+![](https://github.com/Saupernova13/GPTWritingPrompter/blob/main/docs/SAURAAV_AI-DEA_DEMO_GIF.gif)
 
 ---
 
