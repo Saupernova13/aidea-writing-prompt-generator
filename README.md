@@ -59,7 +59,7 @@ AI-dea GPT Writing Prompter is designed to assist authors in generating creative
 ## Installation Instructions:
 
 ### Releases:
-1. Download and install the latest release from the [releases page](https://github.com/Saupernova13/AIdeaGPTWritingPrompter/releases).
+1. Download and install the latest release from the [releases page](https://github.com/Saupernova13/GPTWritingPrompter/releases).
 
 ---
 
