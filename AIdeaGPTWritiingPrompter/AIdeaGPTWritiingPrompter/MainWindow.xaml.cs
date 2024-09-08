@@ -55,6 +55,9 @@ namespace AIdeaGPTWritiingPrompter
         {
             if (!File.Exists(filePath))
             {
+
+                MessageBox.Show("Before you begin generating prompts, please select the CSV files that contain Genre and Tag options. If you cancel, you will have to manually enter them in and create your lists from scratch.", "Error: CSV files were not found in the program root directory.", MessageBoxButton.OK, MessageBoxImage.Information);
+
                 filePath = SelectFile("CSV files (*.csv)|*.csv|All files (*.*)|*.*", $"Select {Path.GetFileNameWithoutExtension(filePath)} CSV File");
             }
 

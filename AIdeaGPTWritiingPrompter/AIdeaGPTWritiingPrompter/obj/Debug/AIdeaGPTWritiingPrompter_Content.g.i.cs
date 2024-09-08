@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("book-lightbulb.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("aidea_gpt_writing_prompter_logo.ico")]
 
 

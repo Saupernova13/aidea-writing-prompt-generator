@@ -1,4 +1,6 @@
 C:\Users\Sauraav\Documents\GitHub\GPTWritingPrompter\AIdeaGPTWritiingPrompter\AIdeaGPTWritiingPrompter\bin\Debug\AIdeaGPTWritiingPrompter.exe.config
+C:\Users\Sauraav\Documents\GitHub\GPTWritingPrompter\AIdeaGPTWritiingPrompter\AIdeaGPTWritiingPrompter\bin\Debug\AIdeaGPTWritiingPrompter.exe.manifest
+C:\Users\Sauraav\Documents\GitHub\GPTWritingPrompter\AIdeaGPTWritiingPrompter\AIdeaGPTWritiingPrompter\bin\Debug\AIdeaGPTWritiingPrompter.application
 C:\Users\Sauraav\Documents\GitHub\GPTWritingPrompter\AIdeaGPTWritiingPrompter\AIdeaGPTWritiingPrompter\bin\Debug\AIdeaGPTWritiingPrompter.exe
 C:\Users\Sauraav\Documents\GitHub\GPTWritingPrompter\AIdeaGPTWritiingPrompter\AIdeaGPTWritiingPrompter\bin\Debug\AIdeaGPTWritiingPrompter.pdb
 C:\Users\Sauraav\Documents\GitHub\GPTWritingPrompter\AIdeaGPTWritiingPrompter\AIdeaGPTWritiingPrompter\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
@@ -44,10 +46,8 @@ C:\Users\Sauraav\Documents\GitHub\GPTWritingPrompter\AIdeaGPTWritiingPrompter\AI
 C:\Users\Sauraav\Documents\GitHub\GPTWritingPrompter\AIdeaGPTWritiingPrompter\AIdeaGPTWritiingPrompter\obj\Debug\AIdeaGPTWritiingPrompter.Properties.Resources.resources
 C:\Users\Sauraav\Documents\GitHub\GPTWritingPrompter\AIdeaGPTWritiingPrompter\AIdeaGPTWritiingPrompter\obj\Debug\AIdeaGPTWritiingPrompter.csproj.GenerateResource.cache
 C:\Users\Sauraav\Documents\GitHub\GPTWritingPrompter\AIdeaGPTWritiingPrompter\AIdeaGPTWritiingPrompter\obj\Debug\AIdeaGPTWritiingPrompter.csproj.CoreCompileInputs.cache
+C:\Users\Sauraav\Documents\GitHub\GPTWritingPrompter\AIdeaGPTWritiingPrompter\AIdeaGPTWritiingPrompter\obj\Debug\AIdeaGPTWritiingPrompter.exe.manifest
+C:\Users\Sauraav\Documents\GitHub\GPTWritingPrompter\AIdeaGPTWritiingPrompter\AIdeaGPTWritiingPrompter\obj\Debug\AIdeaGPTWritiingPrompter.application
 C:\Users\Sauraav\Documents\GitHub\GPTWritingPrompter\AIdeaGPTWritiingPrompter\AIdeaGPTWritiingPrompter\obj\Debug\AIdeaGPT.03190A3C.Up2Date
 C:\Users\Sauraav\Documents\GitHub\GPTWritingPrompter\AIdeaGPTWritiingPrompter\AIdeaGPTWritiingPrompter\obj\Debug\AIdeaGPTWritiingPrompter.exe
 C:\Users\Sauraav\Documents\GitHub\GPTWritingPrompter\AIdeaGPTWritiingPrompter\AIdeaGPTWritiingPrompter\obj\Debug\AIdeaGPTWritiingPrompter.pdb
-C:\Users\Sauraav\Documents\GitHub\GPTWritingPrompter\AIdeaGPTWritiingPrompter\AIdeaGPTWritiingPrompter\bin\Debug\AIdeaGPTWritiingPrompter.exe.manifest
-C:\Users\Sauraav\Documents\GitHub\GPTWritingPrompter\AIdeaGPTWritiingPrompter\AIdeaGPTWritiingPrompter\bin\Debug\AIdeaGPTWritiingPrompter.application
-C:\Users\Sauraav\Documents\GitHub\GPTWritingPrompter\AIdeaGPTWritiingPrompter\AIdeaGPTWritiingPrompter\obj\Debug\AIdeaGPTWritiingPrompter.exe.manifest
-C:\Users\Sauraav\Documents\GitHub\GPTWritingPrompter\AIdeaGPTWritiingPrompter\AIdeaGPTWritiingPrompter\obj\Debug\AIdeaGPTWritiingPrompter.application
